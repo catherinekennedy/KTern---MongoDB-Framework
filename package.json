@@ -1,0 +1,21 @@
+{
+  "name": "ktern-rag-chatbot",
+  "version": "1.0.0",
+  "description": "",
+  "workspaces": [
+    "packages/*"
+  ],
+  "private": true,
+  "scripts": {
+    "ingest:all": "npm run ingest:all --workspace=ingest",
+    "dev": "npm run dev --workspace=server & npm run dev --workspace=ui"
+  },
+  "author": "",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "ts-node": "^10.9.2"
+  },
+  "volta": {
+    "node": "20.17.0"
+  }
+}
