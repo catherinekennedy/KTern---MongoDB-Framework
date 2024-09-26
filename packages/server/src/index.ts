@@ -22,6 +22,7 @@ import {
   makeLangchainOpenAiLlm,
   makeStepBackPromptingPreprocessor,
 } from "./stepBackPromptingPreProcessor";
+import cors from "cors"
 
 // Load project environment variables
 const dotenvPath = path.join(__dirname, "..", "..", "..", ".env"); // .env at project root
@@ -146,6 +147,7 @@ const startServer = async () => {
   await mongodb.connect();
   logger.info("Starting server...");
   const app = await makeApp(config);
+  app.use(cors());
   const server = app.listen(PORT, () => {
     logger.info(`Server listening on port: ${PORT}`);
   });
